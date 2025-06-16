@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #87CEEB, #98FB98); /* Default gradient: lightblue to lightgreen */
+    transition: background 0.5s;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for content */
+    border-radius: 10px;
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 200px; /* Fixed width for alignment */
+    display: block; /* Stack buttons vertically */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.home-btn {
+    background-color: #008CBA;
+}
+
+.home-btn:hover {
+    background-color: #007B9A;
+}
+
+.accessibility-popup {
+    background-color: #ff9800;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.nav-buttons {
+    margin: 20px 0;
+}
+
+#mood-question {
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
+    margin: 10px 0;
+    padding: 10px;
+}
