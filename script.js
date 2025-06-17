@@ -4,7 +4,7 @@ if (savedGradient) {
     document.body.style.background = savedGradient;
 }
 
-// Change and save background gradient with at least 6 color combinations (updated with darker tones)
+// Change and save background gradient with at least 6 color combinations (updated with more darker tones)
 const colorCombinations = [
     { start: '#1E1E2F', end: '#2C2C54' },    // Dark Navy to Midnight Blue
     { start: '#1A252F', end: '#3A3F44' },    // Dark Slate to Charcoal
@@ -86,12 +86,16 @@ function displayNotes() {
     const notesList = document.getElementById('notes-list');
     if (notesList) {
         let notes = JSON.parse(localStorage.getItem('moodNotes') || '[]');
-        notesList.innerHTML = '';
-        notes.forEach(note => {
-            const p = document.createElement('p');
-            p.textContent = `${note.date}: ${note.text}`;
-            notesList.appendChild(p);
-        });
+        notesList.innerHTML = ''; // Clear existing content
+        if (notes.length > 0) {
+            notes.forEach(note => {
+                const p = document.createElement('p');
+                p.textContent = `${note.date}: ${note.text}`;
+                notesList.appendChild(p);
+            });
+        } else {
+            notesList.innerHTML = '<p>Nenhuma anotação ainda.</p>'; // Placeholder if no notes
+        }
     }
 }
 
