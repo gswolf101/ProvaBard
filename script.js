@@ -4,18 +4,18 @@ if (savedGradient) {
     document.body.style.background = savedGradient;
 }
 
-// Change and save background gradient with at least 6 color combinations (updated with more darker tones)
+// Change and save background gradient with peaceful color combinations
 const colorCombinations = [
-    { start: '#1E1E2F', end: '#2C2C54' },    // Dark Navy to Midnight Blue
-    { start: '#1A252F', end: '#3A3F44' },    // Dark Slate to Charcoal
-    { start: '#2F2F4F', end: '#4A4E69' },    // Dark Purple to Deep Purple
-    { start: '#1B263B', end: '#415A77' },    // Dark Blue-Gray to Steel Blue
-    { start: '#0F1419', end: '#2E4057' },    // Almost Black to Dark Slate Blue
-    { start: '#212121', end: '#37474F' },    // Dark Gray to Dark Gray-Blue
-    { start: '#1C2526', end: '#3B3A36' },    // Dark Teal to Dark Taupe
-    { start: '#252525', end: '#4A403F' },    // Dark Gray to Dark Brown
-    { start: '#1A2A44', end: '#3D566E' },    // Deep Blue to Slate Gray
-    { start: '#2E2F2F', end: '#4F4F4F' }     // Dark Charcoal to Medium Gray
+    { start: '#B2DFDB', end: '#80CBC4' },    // Light Teal to Teal
+    { start: '#C8E6C9', end: '#A5D6A7' },    // Light Green to Green
+    { start: '#E0F2F7', end: '#BBDEFB' },    // Light Blue to Soft Blue
+    { start: '#F5F5F5', end: '#E0E0E0' },    // Off-White to Light Gray
+    { start: '#D7CCC8', end: '#BCAAA4' },    // Warm Beige to Soft Brown
+    { start: '#E1BEE7', end: '#CE93D8' },    // Lavender to Light Purple
+    { start: '#B3E5FC', end: '#81D4FA' },    // Pale Blue to Sky Blue
+    { start: '#C5E1A5', end: '#9CCC65' },    // Pale Green to Olive Green
+    { start: '#F8BBD0', end: '#F48FB1' },    // Light Pink to Soft Pink
+    { start: '#DCE775', end: '#AFB42B' }     // Light Yellow-Green to Olive
 ];
 
 function changeColor(index) {
