@@ -24,18 +24,9 @@ function changeColor(index) {
     localStorage.setItem('bgGradient', `linear-gradient(to right, ${start}, ${end})`);
 }
 
-// Add color change buttons dynamically
+// Add color change buttons dynamically only on the customization page
 function addColorButtons() {
-    const colorOptionsHome = document.querySelector('.color-options');
     const colorOptionsCustomize = document.querySelector('#color-options');
-    if (colorOptionsHome) {
-        colorCombinations.forEach((combo, index) => {
-            const button = document.createElement('button');
-            button.textContent = `Combinação ${index + 1}: ${combo.start} a ${combo.end}`;
-            button.onclick = () => changeColor(index);
-            colorOptionsHome.appendChild(button);
-        });
-    }
     if (colorOptionsCustomize) {
         colorCombinations.forEach((combo, index) => {
             const button = document.createElement('button');
