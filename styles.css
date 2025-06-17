@@ -67,3 +67,17 @@ textarea {
     margin: 10px 0;
     padding: 10px;
 }
+
+#notes-list {
+    margin-top: 20px;
+    text-align: left;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+}
+
+#notes-list p {
+    margin: 5px 0;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
