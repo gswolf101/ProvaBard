@@ -11,7 +11,11 @@ const colorCombinations = [
     { start: '#2F2F4F', end: '#4A4E69' },    // Dark Purple to Deep Purple
     { start: '#1B263B', end: '#415A77' },    // Dark Blue-Gray to Steel Blue
     { start: '#0F1419', end: '#2E4057' },    // Almost Black to Dark Slate Blue
-    { start: '#212121', end: '#37474F' }     // Dark Gray to Dark Gray-Blue
+    { start: '#212121', end: '#37474F' },    // Dark Gray to Dark Gray-Blue
+    { start: '#1C2526', end: '#3B3A36' },    // Dark Teal to Dark Taupe
+    { start: '#252525', end: '#4A403F' },    // Dark Gray to Dark Brown
+    { start: '#1A2A44', end: '#3D566E' },    // Deep Blue to Slate Gray
+    { start: '#2E2F2F', end: '#4F4F4F' }     // Dark Charcoal to Medium Gray
 ];
 
 function changeColor(index) {
