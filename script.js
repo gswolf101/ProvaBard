@@ -4,14 +4,14 @@ if (savedGradient) {
     document.body.style.background = savedGradient;
 }
 
-// Change and save background gradient with at least 6 color combinations
+// Change and save background gradient with at least 6 color combinations (updated with darker tones)
 const colorCombinations = [
-    { start: '#87CEEB', end: '#98FB98' },    // Light Blue to Light Green
-    { start: '#FFDAB9', end: '#98FF98' },    // Peach to Mint Green
-    { start: '#B0E0E6', end: '#DDA0DD' },    // Light Steel Blue to Plum
-    { start: '#F0E68C', end: '#20B2AA' },    // Khaki to Light Sea Green
-    { start: '#E6E6FA', end: '#FFA07A' },    // Lavender to Light Salmon
-    { start: '#ADD8E6', end: '#90EE90' }     // Light Blue to Light Green Variant
+    { start: '#1E1E2F', end: '#2C2C54' },    // Dark Navy to Midnight Blue
+    { start: '#1A252F', end: '#3A3F44' },    // Dark Slate to Charcoal
+    { start: '#2F2F4F', end: '#4A4E69' },    // Dark Purple to Deep Purple
+    { start: '#1B263B', end: '#415A77' },    // Dark Blue-Gray to Steel Blue
+    { start: '#0F1419', end: '#2E4057' },    // Almost Black to Dark Slate Blue
+    { start: '#212121', end: '#37474F' }     // Dark Gray to Dark Gray-Blue
 ];
 
 function changeColor(index) {
@@ -22,13 +22,22 @@ function changeColor(index) {
 
 // Add color change buttons dynamically
 function addColorButtons() {
-    const colorOptions = document.querySelector('.color-options');
-    if (colorOptions) {
+    const colorOptionsHome = document.querySelector('.color-options');
+    const colorOptionsCustomize = document.querySelector('#color-options');
+    if (colorOptionsHome) {
         colorCombinations.forEach((combo, index) => {
             const button = document.createElement('button');
-            button.textContent = `Combinação ${index + 1}`;
+            button.textContent = `Combinação ${index + 1}: ${combo.start} a ${combo.end}`;
             button.onclick = () => changeColor(index);
-            colorOptions.appendChild(button);
+            colorOptionsHome.appendChild(button);
+        });
+    }
+    if (colorOptionsCustomize) {
+        colorCombinations.forEach((combo, index) => {
+            const button = document.createElement('button');
+            button.textContent = `Combinação ${index + 1}: ${combo.start} a ${combo.end}`;
+            button.onclick = () => changeColor(index);
+            colorOptionsCustomize.appendChild(button);
         });
     }
 }
@@ -54,15 +63,33 @@ function displayRandomQuestion() {
     }
 }
 
-displayRandomQuestion(); // Display initial question
-
 function saveMoodNote() {
     const note = document.getElementById('mood-note').value;
     if (note && document.getElementById('mood-note')) {
         let notes = JSON.parse(localStorage.getItem('moodNotes') || '[]');
-        notes.push(note);
+        const now = new Date();
+        const dateString = now.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' }) +
+                          ' ' + now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+        notes.push({ text: note, date: dateString });
         localStorage.setItem('moodNotes', JSON.stringify(notes));
         alert('Anotação salva!');
         document.getElementById('mood-note').value = '';
+        displayNotes();
     }
 }
+
+function displayNotes() {
+    const notesList = document.getElementById('notes-list');
+    if (notesList) {
+        let notes = JSON.parse(localStorage.getItem('moodNotes') || '[]');
+        notesList.innerHTML = '';
+        notes.forEach(note => {
+            const p = document.createElement('p');
+            p.textContent = `${note.date}: ${note.text}`;
+            notesList.appendChild(p);
+        });
+    }
+}
+
+displayRandomQuestion(); // Display initial question
+displayNotes(); // Display existing notes on load
